@@ -127,7 +127,7 @@ nav {
 
 .hero-content {
   display: flex; flex-direction: column; justify-content: center;
-  padding: 60px 48px 40px;
+  padding: 48px 48px 36px;
   position: relative; z-index: 2;
   max-width: 900px;
 }
@@ -216,47 +216,6 @@ h1 .word-outline {
 .btn-ghost svg { transition: transform 0.2s; }
 .btn-ghost:hover svg { transform: translateX(4px); }
 
-/* Hero bottom ticker */
-.hero-ticker {
-  position: relative; z-index: 2;
-  border-top: 1px solid var(--rim);
-  display: flex;
-  overflow: hidden;
-}
-.ticker-label {
-  flex-shrink: 0;
-  padding: 16px 28px;
-  background: var(--blue);
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #fff;
-  display: flex; align-items: center;
-  white-space: nowrap;
-}
-.ticker-track-wrap {
-  overflow: hidden;
-  flex: 1;
-  border-left: 1px solid var(--rim);
-}
-.ticker-track {
-  display: flex;
-  animation: ticker 20s linear infinite;
-  white-space: nowrap;
-}
-.ticker-track span {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 16px 32px;
-  border-right: 1px solid var(--rim);
-}
-.ticker-track span.hi { color: var(--sky); }
-@keyframes ticker {
-  from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
@@ -433,168 +392,6 @@ h2 em { font-style: italic; color: var(--sky); }
   padding: 3px 10px;
 }
 
-/* ─── STATS BAND ─── */
-.stats-band {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: var(--panel);
-  border-top: 1px solid var(--rim);
-  border-bottom: 1px solid var(--rim);
-}
-.stat-cell {
-  padding: 48px 40px;
-  border-right: 1px solid var(--rim);
-  position: relative;
-  overflow: hidden;
-}
-.stat-cell:last-child { border-right: none; }
-.stat-cell::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--blue), transparent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-.stat-cell:hover::after { transform: scaleX(1); }
-.stat-num {
-  font-family: 'Instrument Serif', serif;
-  font-style: italic;
-  font-size: 3.5rem;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.stat-num span { color: var(--sky); }
-.stat-desc {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-/* ─── WHY ─── */
-#why { background: var(--ink); }
-.why-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-.why-text-col {}
-.why-lead {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--pale);
-  margin-bottom: 48px;
-}
-.why-list { display: flex; flex-direction: column; gap: 0; }
-.why-item {
-  display: flex; gap: 24px;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--rim);
-  transition: padding-left 0.2s;
-}
-.why-item:first-child { border-top: 1px solid var(--rim); }
-.why-item:hover { padding-left: 8px; }
-.why-icon {
-  width: 36px; height: 36px;
-  background: rgba(37,99,235,0.12);
-  border: 1px solid rgba(37,99,235,0.25);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  font-size: 0.9rem;
-}
-.why-item-title {
-  font-weight: 700;
-  font-size: 0.88rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  color: var(--white);
-}
-.why-item-desc {
-  font-size: 0.84rem;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-/* Big aside quote */
-.why-aside {
-  position: sticky; top: 100px;
-}
-.big-quote {
-  font-family: 'Instrument Serif', serif;
-  font-style: italic;
-  font-size: clamp(2rem, 3.8vw, 4rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--white);
-  margin-bottom: 32px;
-  padding-left: 28px;
-  border-left: 3px solid var(--blue);
-}
-.big-quote em { color: var(--sky); font-style: normal; }
-.aside-note {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding-left: 28px;
-}
-
-/* ─── CTA ─── */
-#cta {
-  background: var(--deep);
-  border-top: 1px solid var(--rim);
-  padding: 100px 48px;
-  position: relative;
-  overflow: hidden;
-}
-#cta::before {
-  content: '';
-  position: absolute;
-  width: 600px; height: 600px;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-.cta-inner {
-  position: relative; z-index: 1;
-  max-width: 700px; margin: 0 auto; text-align: center;
-}
-.cta-inner .section-tag { justify-content: center; }
-.cta-inner h2 { margin-bottom: 20px; }
-.cta-inner p {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--pale);
-  margin-bottom: 44px;
-}
-.cta-form {
-  display: flex; gap: 0;
-  max-width: 480px; margin: 0 auto;
-}
-.cta-input {
-  flex: 1;
-  background: var(--panel);
-  border: 1px solid var(--rim);
-  border-right: none;
-  color: var(--white);
-  font-family: 'Syne', sans-serif;
-  font-size: 0.88rem;
-  padding: 14px 20px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-.cta-input::placeholder { color: var(--muted); }
-.cta-input:focus { border-color: var(--blue); }
-.cta-form .btn-primary { white-space: nowrap; }
-
 /* ─── FOOTER ─── */
 footer {
   background: var(--ink);
@@ -659,27 +456,65 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ─── RESPONSIVE ─── */
+
+/* Tablet: 601px – 960px */
 @media (max-width: 960px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
-  .hero-content { padding: 48px 20px 32px; }
-  section { padding: 72px 20px; }
-  .product-grid { grid-template-columns: 1fr 1fr; }
-  .stats-band { grid-template-columns: 1fr 1fr; }
-  .stat-cell:nth-child(2) { border-right: none; }
-  .why-layout { grid-template-columns: 1fr; gap: 48px; }
-  .why-aside { position: static; }
-  footer { flex-direction: column; text-align: center; padding: 32px 20px; }
-  .footer-links { flex-wrap: wrap; justify-content: center; }
-  #cta { padding: 72px 20px; }
-  .cta-form { flex-direction: column; }
-  .cta-input { border-right: 1px solid var(--rim); border-bottom: none; }
+  .hero-content { padding: 32px 20px 28px; }
+  .hero-content h1 { font-size: clamp(2.6rem, 8vw, 4.5rem); margin-bottom: 20px; }
+  .hero-desc { font-size: 0.92rem; margin-bottom: 32px; }
+  section { padding: 48px 20px; }
+  #products { padding-top: 40px; }
+  .product-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
+  .prod-name { font-size: 1.2rem; }
+  .prod-img-wrap { height: 160px; }
+  .filter-row { gap: 5px; }
+  .filter-btn { padding: 6px 12px; font-size: 0.6rem; }
+  h2 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 32px; }
+  footer { flex-direction: column; text-align: center; padding: 28px 20px; gap: 16px; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
 }
+
+/* Phone: ≤ 600px */
 @media (max-width: 600px) {
-  .product-grid { grid-template-columns: 1fr; }
-  .stats-band { grid-template-columns: 1fr 1fr; }
-  h1 { font-size: 3rem; }
-  .hero-ticker .ticker-label { display: none; }
+  nav { height: 54px; padding: 0 16px; }
+  .logo-main { font-size: 0.95rem; }
+  .logo-sub { font-size: 0.52rem; }
+  .nav-btn { padding: 7px 14px; font-size: 0.66rem; }
+
+  .hero { min-height: auto; }
+  .hero-content { padding: 28px 16px 24px; }
+  h1 { font-size: clamp(2.2rem, 10vw, 3.2rem); line-height: 0.97; margin-bottom: 16px; }
+  h1 .word-outline { -webkit-text-stroke: 1px var(--muted); }
+  .hero-desc { font-size: 0.88rem; line-height: 1.65; margin-bottom: 24px; max-width: 100%; }
+  .hero-badge { margin-bottom: 20px; }
+  .hero-cta-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .btn-primary { width: 100%; text-align: center; padding: 13px 20px; }
+  .btn-ghost { padding: 8px 0; }
+
+  section { padding: 36px 16px; }
+  #products { padding-top: 32px; }
+
+  .section-tag { font-size: 0.58rem; margin-bottom: 12px; }
+  h2 { font-size: 1.8rem; margin-bottom: 24px; }
+
+  .filter-row { gap: 4px; flex-wrap: wrap; }
+  .filter-btn { padding: 5px 10px; font-size: 0.58rem; letter-spacing: 0.08em; }
+
+  .product-grid { grid-template-columns: 1fr; gap: 1px; }
+  .prod-card { padding: 0 0 24px; }
+  .prod-img-wrap { height: 220px; margin-bottom: 16px; }
+  .prod-header { padding: 0 20px; margin-top: 4px; margin-bottom: 14px; }
+  .prod-name { font-size: 1.4rem; padding: 0 20px; }
+  .prod-type { font-size: 0.6rem; padding: 0 20px; margin-bottom: 14px; }
+  .prod-desc { font-size: 0.82rem; padding: 0 20px; margin-bottom: 18px; }
+  .prod-tags { padding: 0 20px; }
+  .prod-price { padding: 0 20px; margin-top: 16px; }
+  .prod-watermark { right: 12px; }
+
+  footer { padding: 24px 16px; }
+  .footer-copy { font-size: 0.6rem; }
 }
 </style>
 </head>
@@ -693,10 +528,8 @@ footer {
   </a>
   <ul class="nav-links">
     <li><a href="#products">Produse</a></li>
-    <li><a href="#why">De ce noi</a></li>
-    <li><a href="#cta">Contact</a></li>
   </ul>
-  <a href="#cta" class="nav-btn">Cere Ofertă</a>
+
 </nav>
 
 <!-- HERO -->
@@ -716,48 +549,11 @@ footer {
     </p>
     <div class="hero-cta-row reveal">
       <a href="#products" class="btn-primary">Vezi Gamă →</a>
-      <a href="#cta" class="btn-ghost">
-        Consultanță gratuită
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
 
-  <div class="hero-ticker">
-    <div class="ticker-label">// Live Stock</div>
-    <div class="ticker-track-wrap">
-      <div class="ticker-track">
-        <span class="hi">Pirelli Supercorsa SC1 · 120/70–180/60</span>
-        <span>Pirelli Supercorsa SC1 · 120/70–160/60</span>
-        <span class="hi">Pirelli Supercorsa SC1 · 120/70–200/55</span>
-        <span>Pirelli Supercorsa SC2 · 120/70–200/55</span>
-        <span class="hi">Pirelli Supercorsa SC2 · 120/70–190/55</span>
-        <span>Pirelli Supercorsa SC2 · 120/70–180/55</span>
-        <span class="hi">Pirelli Rosso Corsa 2 · 120/70–190/55</span>
-        <span>Pirelli Rosso Corsa 2 · 120/70–180/55</span>
-        <span class="hi">Metzeler M7RR · 120/70–160/60</span>
-        <span>Dunlop MS2/MS0 · 125/80–200/70</span>
-        <span class="hi">Dunlop MS3/MS2 · 120/70–195/65</span>
-        <span class="hi">Pirelli Supercorsa SC1 · 120/70–180/60</span>
-        <span>Pirelli Supercorsa SC1 · 120/70–160/60</span>
-        <span class="hi">Pirelli Supercorsa SC1 · 120/70–200/55</span>
-        <span>Pirelli Supercorsa SC2 · 120/70–200/55</span>
-        <span class="hi">Pirelli Supercorsa SC2 · 120/70–190/55</span>
-        <span>Pirelli Supercorsa SC2 · 120/70–180/55</span>
-        <span class="hi">Pirelli Rosso Corsa 2 · 120/70–190/55</span>
-        <span>Pirelli Rosso Corsa 2 · 120/70–180/55</span>
-        <span class="hi">Metzeler M7RR · 120/70–160/60</span>
-        <span>Dunlop MS2/MS0 · 125/80–200/70</span>
-        <span class="hi">Dunlop MS3/MS2 · 120/70–195/65</span>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-band">
-  <div class="stat-cell reveal">
-    <div class="stat-num">11<span>+</span></div>
     <div class="stat-desc">Seturi disponibile</div>
   </div>
   <div class="stat-cell reveal">
@@ -1005,65 +801,7 @@ footer {
   </div>
 </section>
 
-<!-- WHY -->
-<section id="why">
-  <div class="why-layout">
-    <div class="why-text-col">
-      <div class="section-tag reveal">De ce AlexGP</div>
-      <h2 class="reveal">Experți în <em>anvelope.</em></h2>
-      <p class="why-lead reveal">Nu vindem doar cauciucuri. Oferim consultanță, montaj profesional și siguranța că ai anvelopa corectă pentru modul tău de a călători.</p>
-      <div class="why-list">
-        <div class="why-item reveal">
-          <div class="why-icon">⚡</div>
-          <div>
-            <div class="why-item-title">Livrare în 24h</div>
-            <div class="why-item-desc">Toate produsele din stoc sunt expediate în maximum 24 de ore. Comandă azi, montezi mâine.</div>
-          </div>
-        </div>
-        <div class="why-item reveal">
-          <div class="why-icon">🏆</div>
-          <div>
-            <div class="why-item-title">Echipă de piloți</div>
-            <div class="why-item-desc">Suntem motocicliști înainte de toate. Recomandările noastre vin din experiență reală pe drumuri reale.</div>
-          </div>
-        </div>
-        <div class="why-item reveal">
-          <div class="why-icon">💰</div>
-          <div>
-            <div class="why-item-title">Cel mai bun preț</div>
-            <div class="why-item-desc">Găsești mai ieftin? Egalăm orice ofertă verificată. Calitate premium la prețuri corecte.</div>
-          </div>
-        </div>
-        <div class="why-item reveal">
-          <div class="why-icon">🛡️</div>
-          <div>
-            <div class="why-item-title">Garanție completă</div>
-            <div class="why-item-desc">Garanție producător pe toate anvelopele și garanție de manoperă pe montajul efectuat la noi.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="why-aside">
-      <div class="big-quote reveal">
-        "Fiecare viraj este o promisiune. Noi ne asigurăm că <em>anvelopa</em> o ține."
-      </div>
-      <div class="aside-note reveal">— AlexGP Anvelope Moto</div>
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section id="cta">
-  <div class="cta-inner">
-    <div class="section-tag reveal">Contact</div>
-    <h2 class="reveal">Hai să <em>vorbim.</em></h2>
-    <p class="reveal">Spune-ne ce motocicletă ai și cum conduci — îți găsim anvelopa perfectă din gama noastră completă.</p>
-    <div class="cta-form reveal">
-      <input class="cta-input" type="email" placeholder="Email-ul tău...">
-      <a href="/cdn-cgi/l/email-protection#8cefe3e2f8edeff8ccede0e9f4ebfca2fee3" class="btn-primary">Trimite →</a>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
@@ -1073,8 +811,6 @@ footer {
   </div>
   <ul class="footer-links">
     <li><a href="#products">Produse</a></li>
-    <li><a href="#why">Despre noi</a></li>
-    <li><a href="#cta">Contact</a></li>
     <li><a href="#">GDPR</a></li>
   </ul>
   <p class="footer-copy">© 2025 AlexGP Anvelope Moto</p>
@@ -1090,7 +826,7 @@ footer {
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // Hero reveals
-  document.querySelectorAll('.hero .reveal, .stats-band .reveal').forEach((el, i) => {
+  document.querySelectorAll('.hero .reveal').forEach((el, i) => {
     setTimeout(() => el.classList.add('visible'), 200 + i * 100);
   });
 
@@ -1099,4 +835,10 @@ footer {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.querySelectorAll('.prod-card').forEach(c => {
-      const 
+      const cats = c.dataset.cat.split(' ');
+      c.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>
